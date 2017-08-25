@@ -1,0 +1,22 @@
+<div layout="column" class="Todo" ng-cloak>
+
+    <md-content class="Page-container" layout-padding flex>
+        <form name="todoForm" class="md-inline-form">
+            <md-input-container>
+                <label>Add ToDo</label>
+                <input ng-model="vm.newTodo">
+            </md-input-container>
+            <md-button class="md-primary" ng-click="vm.addTodo(vm.newTodo)">Add</md-button>
+        </form>
+    </md-content>
+
+    <md-content layout-padding flex>
+        <md-list ng-cloak>
+            <md-subheader class="md-no-sticky">Your ToDos here!</md-subheader>
+            <md-list-item ng-repeat="todo in vm.todos">
+                <p>{{todo.text}}</p>
+                <md-button class="md-warn" ng-click="vm.removeTodo(todo)">delete</md-button>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</div>
